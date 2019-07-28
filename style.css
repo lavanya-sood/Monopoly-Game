@@ -1,0 +1,360 @@
+	body{
+		background-image: url(Images/bluebackground.jpg);
+		}
+		#playmusic {
+			background-color: lightcyan;
+			float:right;
+			width: 100%;
+			display:none;
+			margin-bottom: 5px;
+		}
+		#soundyes{	
+			margin-left: 50%;
+			float:right;
+			width:20px;
+			height:20px;
+		}
+		#soundno{
+			float:right;
+			width:20px;
+			height:20px;
+		}
+
+		div.dice{
+			float:right;
+			width:30px;
+			background:skyblue;
+			border:#999 1px solid;
+			padding:10px;
+			font-size:30px;
+			text-align:center;
+			margin:5px;
+			display : block;
+		}
+		
+
+	#winnerscreen {
+		display: none;
+	}
+		
+	video#bgvid { 
+	    position: fixed;
+	    top: 50%;
+	    left: 50%;
+	    min-width: 100%;
+	    min-height: 100%;
+	    width: auto;
+	    height: auto;
+	    z-index: -100;
+	    -ms-transform: translateX(-50%) translateY(-50%);
+	    -moz-transform: translateX(-50%) translateY(-50%);
+	    -webkit-transform: translateX(-50%) translateY(-50%);
+	    transform: translateX(-50%) translateY(-50%);
+	    background: url(Images/rags to riches.png) no-repeat;
+	    background-size: cover; 
+	}
+
+	#win {
+
+	    z-index: 2; 
+	    position: absolute;
+	    color: blue;
+	     display: inline-block;
+	     margin-top: -5%;
+	     
+
+	}
+
+
+
+	#winner_name {
+		font-size: 200px;
+		margin-bottom: -25%;
+		 margin-left: 55%;
+	}
+	#wins {
+		font-size: 150px;
+		margin-left: 70%;
+	}
+
+	.play_button {
+		
+
+	    background-color: #FFD700; 
+	    border: none;
+	    color: black;
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    font-weight: bold;
+	    font-family: "FreeMono", monospace;
+	    margin: 4px 2px;
+	    cursor: pointer;
+	    -webkit-transition-duration: 0.4s; /* Safari */
+	    transition-duration: 0.4s;
+	     
+	    margin-top: -20%;
+	    margin-left: 90%;
+	    margin-right: 90%;
+
+	}
+
+	.play_button:hover {
+	    box-shadow: 0 8px 16px 0 rgba(255,87,51,0.2), 0 17px 50px 0 rgba(255,87,51,0.19);
+	}
+			#status{
+				margin-bottom: -5%;
+			}
+			
+			#rolleddice {
+				float:right;
+				margin-top: -10%;
+				margin-right: 35%;
+				width: 100%;
+			}
+			#buttonroll {
+				float:absolute;
+				background-color: #DC143C;
+			    border: none;
+			    color: white;
+			    padding: 15px 32px;
+			    text-align: center;
+			    text-decoration: none;
+			    /*display: inline-block;*/
+			    font-size: 16px;
+			    margin: 4px 2px;
+			    cursor: pointer;
+			    margin-bottom: -1%;
+			}
+			#sidebar{
+					
+					background-color: lightcyan;
+	                width: calc(100% - 810px);  
+	                height: 100%;
+	                display: none;
+	                float: right;
+	                text-align: center;
+	                
+	                padding-top: 10px;
+	                padding-bottom: 30px;
+	                overflow: scroll;
+	                color: black;
+			}
+			.choice{
+				width:70px;
+				height:90px;
+			}
+			.choicebutton {
+				 background-color: seashell; 
+				 margin:5px;
+				 border: 3px solid #555555;
+			}
+			.choicebutton:focus {
+				background-color: #ff4500;
+			    color: white;
+			}
+			.choicebutton2 {
+				 background-color: seashell; 
+				 margin:5px;
+				 border: 3px solid #555555;
+			}
+			.choicebutton2:focus {
+				background-color: #ff4500;
+			    color: white;
+			}
+	#player1info {
+		margin-left:300px;
+		display: none;
+	}
+	#player2info {
+		margin-left:300px;
+		display: none;
+	}	
+	#game_div
+	{
+
+	    display: none;
+	}
+
+	.card {
+		display: none;
+		position: absolute;
+		left: 160px;
+		top: 230px;
+		width: 300px;
+		height: 200px;
+		
+	}
+
+
+
+
+	.shown {
+		display: block;
+	}
+	.buttons{
+		display: inline-block;
+	  padding: 15px 25px;
+	  font-size: 20px;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  outline: none;
+	  color: #000000;
+	  background-color: #EE82EE;
+	  border: none;
+	  border-radius: 15px;
+	  box-shadow: 0 9px #663399;
+	}
+	.buttons:hover {background-color: #DA70D6}
+
+	.buttons:active {
+	  background-color: #DA70D6;
+	  box-shadow: 0 5px #666;
+	  transform: translateY(4px);
+	}
+	.wheel_buttons {
+	    background-color: #4CAF50; /* Green */
+	    border: none;
+	    color: white;
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	}
+	#wheelgamebuttons {
+		margin-left: 37%;
+		margin-right: 37%;
+		margin-top: 1%;
+	}
+	#cornergame{
+		
+		background-image: url("Images/Wheel Bg.jpg");
+		width: 100%;
+		height: 100%;
+	    background-size: 100% 100%;
+	    display:none;
+	    background-repeat: no-repeat;
+	    }
+	    #wheel {
+	      
+	      margin-left: 38%;
+	      margin-top: 21%;
+	    }  
+	   
+	#mainsoundyes {
+		width: 400px;
+		height: 400px;
+
+	}
+	#mainsoundno {
+		width: 500px;
+		height: 400px;
+		margin-left: 10%;
+	}
+	#initialisegame {
+		background-color: midnightblue; 
+	    border: none;
+	    color: white;
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 30px;
+	    margin-top: 30px;
+	    margin-left: 45%;
+	}
+	#Play_sound{
+		margin-left: 15%;
+	}
+	#soundheading {
+		color: midnightblue;
+		text-shadow: 3px 2px lightcyan;
+		font-family: "Gill Sans", sans-serif;
+		font-weight: 800;
+		 font-size: 500%;
+		 text-align: center;
+	}
+	#mainsoundscreen {
+		background-image: url("Images/Blue-Marble-Paper-Texture.jpg");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		width: 100%;
+		height: 100%;
+	} 
+
+
+	 #instructionsmenubutton {
+	 	 background-color: navy; /* Green */
+	    border: none;
+	    color: white;
+	    
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    margin-top: 0px;
+	    margin-left: 1100px;
+
+	    
+	 }
+
+	#instructions_mainscreen {
+		display: none;
+	}
+
+	#gamefeatures , #buyingapropins , #payingrentinstruct , #freespaceinstruct , #landingongoinstruct , #landingonjailinstruct , #landingongotojailinstruct , #chancecardsinstruct , #gameofluckinstruct{
+	  display: none;
+	}
+	#gfii , #bpii , #rpii , #fsii , #lgii , #ljii , #lgjii , #ccii , #glii{
+	  margin-top: 5px;
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  cursor: hand;
+	}
+	#gf1 , #bp1 , #rp1 , #fs1 , #lg1 , #lj1 , #lgj1 , #cc1 , #gl1{
+	  position:absolute;
+	  font-size: 30px;
+	  color: white;
+	  font-family: Arial, Helvetica,sans-serif;
+	  margin-top:0px;
+	  right: -10px;
+	  width: 400px;
+	  height: 100px;
+	  text-align: center;
+	  cursor: hand;
+	  z-index: 2
+	}
+
+	.textshow {
+	  color: black;
+	  text-decoration: underline;
+	  text-transform: capitalize;
+	  text-shadow: 3px 2px azure;
+	  font-size: 20px;
+	}
+
+	.instructionsscreenbutton {
+	    background-color: darkslategray; 
+	    border: none;
+	    color: white;
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	}
+
+	#playermoneydisplay {
+		color: white;
+		float: right;
+		margin-top: -10%;
+		margin-right: 3%;
+		background-color: black;
+		 padding:5px;
+		background-size: 100% 100%;
+	}

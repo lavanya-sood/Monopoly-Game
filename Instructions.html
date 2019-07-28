@@ -1,0 +1,349 @@
+<html>
+<head>
+  <style>
+body {
+    background-image: url("Images/lightbluebg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+#gamefeatures , #buyingapropins , #payingrentinstruct , #freespaceinstruct , #landingongoinstruct , #landingonjailinstruct , #landingongotojailinstruct , #chancecardsinstruct , #gameofluckinstruct{
+  display: none;
+}
+#gfii , #bpii , #rpii , #fsii , #lgii , #ljii , #lgjii , #ccii , #glii{
+  margin-top: 5px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: hand;
+}
+#gf1 , #bp1 , #rp1 , #fs1 , #lg1 , #lj1 , #lgj1 , #cc1 , #gl1{
+  position:absolute;
+  font-size: 30px;
+  color: white;
+  font-family: Arial, Helvetica,sans-serif;
+  margin-top:0px;
+  right: -10px;
+  width: 400px;
+  height: 100px;
+  text-align: center;
+  cursor: hand;
+  z-index: 2
+}
+
+.textshow {
+  color: black;
+  text-decoration: underline;
+  text-transform: capitalize;
+  text-shadow: 3px 2px azure;
+  font-size: 20px;
+}
+
+.instructionsscreenbutton {
+    background-color: darkslategray; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+  </style>
+  <title>Monopoly</title>
+  <script>
+
+//the audio of the player is set
+  var audio = new Audio("Audio/Happy Music Instrumental light Cheerful Happy Mood Joyful Guitar.mp3");
+  //the audio is looped
+  audio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+  audio.play();
+
+var inscounter = 2;
+ function changeimage1() {
+  //changes the images of the game features as a slideshow
+    if (inscounter < 7) {
+      source = 'Instructions/Gameboardfeatures- ' + inscounter + '.jpg'
+      document.getElementById('gfii').src = source;
+      inscounter += 1;}
+    else {
+     //takes player back to main instructions screen
+      backtomaininstructions();
+    }
+  }
+
+var inscounter2 = 2;
+function changeimage2() {
+  //changes the images of the buying property as a slideshow
+    if (inscounter2 < 5) {
+      source = 'Instructions/Propertyinstructions- ' + inscounter2 + '.jpg'
+      document.getElementById('bpii').src = source;
+      inscounter2 += 1;}
+    else {
+      //takes player back to main instructions screen
+      backtomaininstructions();
+    }
+  }
+
+var inscounter3 = 1;
+function changeimage3() {
+  //changes the images of the rent of property as a slideshow
+    if (inscounter3 < 3) {
+      source = 'Instructions/Rentinstructions ' + inscounter3 + '.jpg'
+      document.getElementById('rpii').src = source;
+      inscounter3 += 1;}
+    else {
+      //takes player back to main instructions screen
+      backtomaininstructions();
+    }
+  }
+
+var inscounter4 = 2;
+function changeimage4() {
+  //changes the images of the free space as a slideshow
+    if (inscounter4 < 2) {
+      source = 'Instructions/Freespaces ' + inscounter4 + '.jpg'
+      document.getElementById('fsii').src = source;
+      inscounter4 += 1;}
+    else {
+      //takes player back to main instructions screen
+      backtomaininstructions();
+    }
+  }
+
+
+var inscounter5 = 2;
+function changeimage5() {
+  //changes the images of the landing on go as a slideshow
+    if (inscounter5 < 3) {
+      source = 'Instructions/Goinstructions- ' + inscounter5 + '.jpg'
+      document.getElementById('lgii').src = source;
+      inscounter5 += 1;}
+    else {
+      //takes player back to main instructions screen
+      backtomaininstructions();
+    }
+  }
+
+var inscounter6 = 2;
+function changeimage6() {
+  //changes the images of the landing on jail as a slideshow
+    if (inscounter6 < 5) {
+      source = 'Instructions/jailinstructions- ' + inscounter6 + '.jpg'
+      document.getElementById('ljii').src = source;
+      inscounter6 += 1;}
+    else {
+      //takes player back to main instructions screen
+      backtomaininstructions();
+    }
+  }
+
+var inscounter7 = 1;
+function changeimage7() {
+  //changes the images of the landing on go to jail as a slideshow
+    if (inscounter7 < 4) {
+      source = 'Instructions/gotojailinstructions -' + inscounter7 + '.jpg'
+      document.getElementById('lgjii').src = source;
+      inscounter7 += 1;}
+    else {
+      //takes player back to main instructions screen
+      backtomaininstructions();
+    }
+  }
+
+var inscounter8 = 1;
+function changeimage8() {
+  //changes the images of the chance cards as a slideshow
+    if (inscounter8 < 3) {
+      source = 'Instructions/chanceinstruction- ' + inscounter8 + '.jpg'
+      document.getElementById('ccii').src = source;
+      inscounter8 += 1;}
+    else {
+     //takes player back to main instructions screen
+      backtomaininstructions();
+    }
+  }
+
+var inscounter9 = 1;
+function changeimage9() {
+    if (inscounter9 < 5) {
+      //changes the images of the mini game ("Game Of Luck") as a slideshow
+      source = 'Instructions/luckinstructions- ' + inscounter9 + '.jpg'
+      document.getElementById('glii').src = source;
+      inscounter9 += 1;}
+    else {
+      //takes player back to main instructions screen
+      backtomaininstructions();
+    }
+  }
+
+  function featuresgame(){
+    //displays the 'game features' instructions and resets the counter
+    document.getElementById("instructions_mainscreen").style.display = 'none'; 
+      document.getElementById("gamefeatures").style.display = 'inline-block';
+      document.getElementById('gfii').src = 'Instructions/Gameboardfeatures- 1.jpg';
+      inscounter = 2;
+  }
+
+  function buyingapropertyinstructions(){
+   //displays the buying property instructions and resets the counter
+    document.getElementById("instructions_mainscreen").style.display = 'none'; 
+      document.getElementById("buyingapropins").style.display = 'inline-block';
+        document.getElementById('bpii').src = 'Instructions/Propertyinstructions- 1.jpg';
+       inscounter2 = 2;
+  }
+
+ function freespaceinstructions(){
+    //displays the free space instructions and resets the counter
+    document.getElementById("instructions_mainscreen").style.display = 'none'; 
+      document.getElementById("freespaceinstruct").style.display = 'inline-block';
+        document.getElementById('fsii').src = 'Instructions/Freespaces 1.jpg';
+       inscounter4 = 2;
+  }
+
+   function payingrentinstructions(){
+   //displays the paying rent instructions and resets the counter
+    document.getElementById("instructions_mainscreen").style.display = 'none'; 
+      document.getElementById("payingrentinstruct").style.display = 'inline-block';
+      document.getElementById('rpii').src = 'Instructions/Rentinstructions 1.jpg';
+       inscounter3 = 2;
+  }
+
+
+
+   function landingongoinstructions(){
+    //displays the landing on go instructions and resets the counter
+    document.getElementById("instructions_mainscreen").style.display = 'none'; 
+      document.getElementById("landingongoinstruct").style.display = 'inline-block';
+      document.getElementById('lgii').src = 'Instructions/Goinstructions- 1.jpg';
+       inscounter5 = 2;
+  }
+
+   function landingonjailinstructions(){
+    //displays the landing on jail instructions and resets the counter
+    document.getElementById("instructions_mainscreen").style.display = 'none'; 
+      document.getElementById("landingonjailinstruct").style.display = 'inline-block';
+      document.getElementById('ljii').src = 'Instructions/jailinstructions- 1 .jpg';
+       inscounter6 = 2;
+  }
+
+   function landingongotojailinstructions(){
+    //displays the landing on 'Go to Jail' instructions and resets the counter
+    document.getElementById("instructions_mainscreen").style.display = 'none'; 
+      document.getElementById("landingongotojailinstruct").style.display = 'inline-block';
+      document.getElementById('lgjii').src = 'Instructions/gotojailinstructions -1.jpg';
+       inscounter7 = 1;
+  }
+
+   function chancecardinstructions(){
+    //displays the chance cards instructions and resets the counter
+    document.getElementById("instructions_mainscreen").style.display = 'none'; 
+      document.getElementById("chancecardsinstruct").style.display = 'inline-block';
+      document.getElementById('ccii').src = 'Instructions/chanceinstruction- 1.jpg';
+       inscounter8 = 1;
+  }
+
+   function gameofluckinstructions(){
+    //displays the 'game of luck' instructions and resets the counter
+    document.getElementById("instructions_mainscreen").style.display = 'none'; 
+      document.getElementById("gameofluckinstruct").style.display = 'inline-block';
+      document.getElementById('glii').src = 'Instructions/luckinstructions- 1.jpg';
+       inscounter9 = 1;
+  }
+
+
+
+  function backtomaininstructions(){
+    //hides all the divisions and takes players back to the main screen of the instructions
+    document.getElementById("instructions_mainscreen").style.display = 'inline-block'; 
+      document.getElementById("payingrentinstruct").style.display = 'none';
+      document.getElementById("gamefeatures").style.display = 'none';
+      document.getElementById("buyingapropins").style.display = 'none';
+     document.getElementById("freespaceinstruct").style.display = 'none';
+
+     document.getElementById("landingongoinstruct").style.display = 'none';
+      document.getElementById("landingonjailinstruct").style.display = 'none';
+     document.getElementById("landingongotojailinstruct").style.display = 'none';
+     document.getElementById("chancecardsinstruct").style.display = 'none';
+     document.getElementById("gameofluckinstruct").style.display = 'none';
+  }
+
+  function backtothemainmenu(){
+    //takes the user back to the main screen
+    window.location.href='begin page.html'
+  }
+  </SCRIPT>
+
+</HEAD>
+<BODY>
+<div id= "instructions_mainscreen">
+  <h1> Instructions </h1>
+  <h3> Click the specific heading of the part of the game you want to find out more about </h3> 
+  <p class = "textshow" onclick="featuresgame()"> Game features </p>
+  <p class = "textshow" onclick= "buyingapropertyinstructions()"> Buying a Property </p>
+  <p class = "textshow" onclick= "payingrentinstructions()"> Pay Rent </p>
+  <p class = "textshow" onclick= "freespaceinstructions()"> Free space </p>
+  <p class = "textshow" onclick= "landingongoinstructions()"> Landing On Go </p>
+  <p class = "textshow" onclick= "landingonjailinstructions()"> Landing On Jail </p>
+  <p class = "textshow" onclick= "landingongotojailinstructions()"> Landing On Go To Jail</p>
+  <p class = "textshow" onclick= "chancecardinstructions()"> Chance Cards </p>
+  <p class = "textshow" onclick= "gameofluckinstructions()"> Game Of Luck </p>
+  <input class = "instructionsscreenbutton" type = "button" value="Go back" onclick="backtothemainmenu()"/>
+</div>
+
+<div id = "gamefeatures">
+
+  <p id = 'gf1' onclick="changeimage1()">CLICK TO CONTINUE...</p>
+  <img id = 'gfii' src = 'Instructions/Gameboardfeatures- 1.jpg' onclick='changeimage1()'/>
+</div>
+
+<div id = "buyingapropins">
+  <p id = 'bp1' onclick="changeimage2()">CLICK TO CONTINUE...</p>
+  <img id = 'bpii' src = 'Instructions/Propertyinstructions- 1.jpg' onclick='changeimage2()'/>
+</div>
+
+<div id = "payingrentinstruct">
+  <p id = 'rp1' onclick="changeimage3()">CLICK TO CONTINUE...</p>
+  <img id = 'rpii' src = 'Instructions/Rentinstructions 1.jpg' onclick='changeimage3()'/>
+</div>
+
+<div id = "freespaceinstruct">
+  <p id = 'fs1' onclick="changeimage4()">CLICK TO CONTINUE...</p>
+  <img id = 'fsii' src = 'Instructions/Freespaces 1.jpg' onclick='changeimage4()'/>
+</div>
+
+<div id = "landingongoinstruct">
+  <p id = 'lg1' onclick="changeimage5()">CLICK TO CONTINUE...</p>
+  <img id = 'lgii' src = 'Instructions/Goinstructions- 1.jpg' onclick='changeimage5()'/>
+</div>
+
+
+<div id = "landingonjailinstruct">
+  <p id = 'lj1' onclick="changeimage6()">CLICK TO CONTINUE...</p>
+  <img id = 'ljii' src = 'Instructions/jailinstructions- 1 .jpg' onclick='changeimage6()'/>
+</div>
+
+<div id = "landingongotojailinstruct">
+  <p id = 'lgj1' onclick="changeimage7()">CLICK TO CONTINUE...</p>
+  <img id = 'lgjii' src = 'Instructions/gotojailinstructions -1.jpg' onclick='changeimage7()'/>
+</div>
+
+
+<div id = "chancecardsinstruct">
+  <p id = 'cc1' onclick="changeimage8()">CLICK TO CONTINUE...</p>
+  <img id = 'ccii' src = 'Instructions/chanceinstruction- 1.jpg' onclick='changeimage8()'/>
+</div>
+
+<div id = "gameofluckinstruct">
+  <p id = 'gl1' onclick="changeimage9()">CLICK TO CONTINUE...</p>
+  <img id = 'glii' src = 'Instructions/luckinstructions- 1.jpg' onclick='changeimage9()'/>
+</div>
+
+
+</BODY>
+</HTML>

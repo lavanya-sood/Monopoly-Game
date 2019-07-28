@@ -1,0 +1,323 @@
+<html>
+
+<head>
+	<title> Monopoly </title>
+
+	<link rel="stylesheet" href="style.css">
+
+	<input type="hidden" id="firstname"/>
+</head>
+
+<body>
+<!-- This is the sounds screen -->
+	<div id= "mainsoundscreen">
+		<h1 id="soundheading"> Sound? </h1>
+		<div id = "Play_sound">
+				<button type="submit" onclick = "playmusic()"> <img src="Images/Buttons/sound.png" id="mainsoundyes" alt="Submit"> </button>
+				<button type="submit" onclick = "stopmusic()"> <img src="Images/Buttons/nosound.png" id="mainsoundno" alt="Submit"> </button>
+		</div>
+		<button onclick = "startingthegame()" id = "initialisegame" type= "submit">Next</button>
+</div>	
+	<!-- This is the small panel on top of the screen with the sound buttons and instructions -->
+	<div id="playmusic">
+				<button type="submit" onclick = "playmusic()"> <img src="Images/Buttons/sound.png" id="soundyes" alt="Submit"> </button>
+				<button type="submit" onclick = "stopmusic()"> <img src="Images/Buttons/nosound.png" id="soundno" alt="Submit"> </button>
+				<button id= "instructionsmenubutton" onclick="showtheinstructionmenu()">?</button>
+	</div>
+<!-- This is the player 1's installation screen-->
+		<div id = "player1info">
+			<img id="Heading" src="Images/rags to riches.png" alt="Heading" width="608" height="308">
+			<h3 class = "playerheading"> Player 1: </h3>
+			<input type="text" id="firstplayer"/>
+
+			<h2> What color pawn would you like? (Player 1) </h2>
+			<div style="margin-bottom: 30px;"> 
+				<button id ="button1" class = "choicebutton" type="submit" onclick = "choice1p1()"> <img src="Images/Pawns And Houses/playerpawn1.png" class = "choice" alt="Submit"> </button>
+				<button id = "button2" class = "choicebutton" type="submit" onclick = "choice2p1()"> <img src="Images/Pawns And Houses/playerpawn2.png" class = "choice"  alt="Submit"> </button>
+				<button id = "button3" class = "choicebutton" type="submit" onclick = "choice3p1()"> <img src="Images/Pawns And Houses/playerpawn3.png" class = "choice"  alt="Submit"> </button>
+				<button id = "button4" class = "choicebutton" type="submit" onclick = "choice4p1()"> <img src="Images/Pawns And Houses/playerpawn4.png" class = "choice"  alt="Submit"> </button>
+				<button id = "button5" class = "choicebutton" type="submit" onclick = "choice5p1()"> <img src="Images/Pawns And Houses/playerpawn5.png" class = "choice"  alt="Submit"> </button>
+
+				<h3 id = "colorstatus"> </h3>
+				<input class = "buttons" type="button" value="Next" onclick="playername2()"/>
+			</div>
+	
+		</div>
+
+
+		<!-- This is the player 2's installation screen  -->
+		<div id = "player2info">
+			<img id="Heading" src="Images/rags to riches.png" alt="Heading" width="608" height="308">
+			<h3 class = "playerheading"> Player 2: </h3>
+				<input type="text" id="secondplayer"/>
+				<h2> What color pawn would you like? (Player 2) </h2>
+				<div style="margin-bottom: 30px;"> 
+				<button class = "choicebutton2" type="submit" onclick = "choice1p2()"> <img src="Images/Pawns And Houses/playerpawnI1.png" class = "choice" alt="Submit"> </button>
+				<button  class = "choicebutton2" type="submit" onclick = "choice2p2()"> <img src="Images/Pawns And Houses/playerpawnI2.png" class = "choice"  alt="Submit"> </button>
+				<button  class = "choicebutton2" type="submit" onclick = "choice3p2()"> <img src="Images/Pawns And Houses/playerpawnI3.png" class = "choice"  alt="Submit"> </button>
+				<button class = "choicebutton2" type="submit" onclick = "choice4p2()"> <img src="Images/Pawns And Houses/playerpawnI4.png" class = "choice"  alt="Submit"> </button>
+				<button  class = "choicebutton2" type="submit" onclick = "choice5p2()"> <img src="Images/Pawns And Houses/playerpawnI5.png" class = "choice"  alt="Submit"> </button>
+
+
+				<h3 id = "colorstatus2"> </h3>
+				<input class = "buttons" type="button" value="Play" onclick="gamestart()"/>
+				<input class = "buttons" type="button" value="Back" onclick="playername1()"/>
+			</div>
+
+		</div>
+
+<!-- This is the main game board -->
+<div id="game_div">
+	<div class="card" id="card-cloudcity">
+		<img  src = "Images/Property Cards/Propertycard1.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-dorne">
+		<img  src = "Images/Property Cards/Propertycard2.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-azkaban">
+		<img  src = "Images/Property Cards/Propertycard3.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-mysticfalls">
+		<img  src = "Images/Property Cards/Propertycard4.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-centralcity">
+		<img  src = "Images/Property Cards/Propertycard5.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-gothamcity">
+		<img  src = "Images/Property Cards/Propertycard6.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-metropolis">
+		<img  src = "Images/Property Cards/Propertycard7.jpg" width = "300" height = "200" />
+	</div>
+
+	<div class="card" id="card-winterfell">
+		<img  src = "Images/Property Cards/Propertycard8.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-qarth">
+		<img  src = "Images/Property Cards/Propertycard9.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-tatooine">
+		<img  src = "Images/Property Cards/Propertycard10.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-shire">
+		<img  src = "Images/Property Cards/Propertycard11.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-alderaan">
+		<img  src = "Images/Property Cards/Propertycard12.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-burrow">
+		<img  src = "Images/Property Cards/Propertycard13.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-lianyu">
+		<img  src = "Images/Property Cards/Propertycard14.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-braavos">
+		<img  src = "Images/Property Cards/Propertycard15.jpg" width = "300" height = "200" />
+	</div>
+
+	<div class="card" id="card-riverdale">
+		<img  src = "Images/Property Cards/Propertycard16.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-krypton">
+		<img  src = "Images/Property Cards/Propertycard17.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-kingslanding">
+		<img  src = "Images/Property Cards/Propertycard18.jpg" width = "300" height = "200" />
+	</div>
+
+	<div class="card" id="card-volantis">
+		<img  src = "Images/Property Cards/Propertycard19.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-starshollow">
+		<img  src = "Images/Property Cards/Propertycard20.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-storybrooke">
+		<img  src = "Images/Property Cards/Propertycard21.jpg" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-mordor">
+		<img  src = "Images/Property Cards/Propertycard22.jpg" width = "300" height = "200" />
+	</div>
+
+	<div class="card" id="card-Chancecard">
+		<img  id = "chancecardimg" src = "Images/blank.png" width = "300" height = "200" />
+	</div>
+
+	<div class="card" id="card-Go">
+		<img  src = "Images/blank.png" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-freespacer">
+		<img  src = "Images/blank.png" width = "300" height = "200" />
+	</div>
+<div class="card" id="card-Jail">
+		<img  src = "Images/blank.png" width = "300" height = "200" />
+	</div>
+	<div class="card" id="card-gameOfluck">
+		<img id = "gamecard" src = "Images/blank.png" width = "300" height = "200" />
+	</div>
+
+<!-- This is the screen of the gameboard-->
+	<svg id="svg" align="center" width="600" height="640">
+
+		<image id="picture" x="0" y="0" width="600" height="640" xlink:href="Images/Monopoly board.jpg" />
+		
+		<image id="1house" class="player1house" x="530" y="580" width="0" height="0" xlink:href="Images/Pawns and Houses/playerpawn1house.png" />
+		<image id = "2house" class="player2house" x="530" y="580" width="0" height="0" xlink:href="Images/Pawns and Houses/playerpawn1house.png" />
+		<image id="object" x="510" y="570" width="45" height="45" xlink:href="Images/Pawns and Houses/playerpawn1.png" />
+		<image id="object2" x="530" y="580" width="45" height="45" xlink:href="Images/Pawns and Houses/playerpawn1.png" />
+
+	</svg>
+	
+</div>
+</image>
+
+<!-- This is the side panel containing the dice and the player information-->
+<div id="sidebar">
+	<br>
+
+	<br>
+	<div id = "rolleddice">
+		<div id="die1" class="dice">0</div>
+		<div id="die2" class="dice">0</div>
+	</div>
+	<br>
+				
+		<button id= "buttonroll" onclick="movePlayer()">Roll Dice</button>
+	
+	
+	
+	<h2 id="status" style="clear:left;"></h2>
+	
+	<br>
+
+
+	<h2 id= "statusplay" style = "color: red;"> </h2>
+	<h3 id="gamestatusdisplay" style="clear:left; color: darkgreen;" > </h3>
+	
+	<div id = "player1sidebar">
+		<h3 id = "player1"> Player 1 Properties </h3>
+		<h3 id="moneydis"> </h3>
+		<h4> Properties: </h4>
+		<svg id="prop1svg" align="center" width= "300" height = "150">
+			<image id="picture" x="-50" y="-200" width="600" height="500" xlink:href="Images/white_rectangle_bl_border.gif" />
+			<image id = "propnew" class="propbutton" x="0" y="20" width="0" height= "0" xlink:href="Images/Property Colors/redsquare.png" />
+		</svg>
+	</div>
+	<h3 id = "player2"> Player 2 Properties </h3>
+
+	<h3 id="moneydis2"></h3>
+	<h4> Properties: </h4>
+	<svg id="prop2svg" align="center" width= "300" height = "150">
+		<image id="picture" x="-50" y="-200" width="600" height="500" xlink:href="Images/white_rectangle_bl_border.gif" />
+		<image id = "propnew2" class="propbutton2" x="0" y="20" width="0" height= "0" xlink:href="Images/Property Colors/redsquare.png" />
+	</svg>
+	
+	
+
+</div>
+
+
+
+<!-- This is the wheel game-->
+<div id = "cornergame">
+	    
+      <div id="wheel">
+    <canvas id="canvas" width="300" height="300"></canvas>
+      </div>
+    <div id = "playermoneydisplay">
+    	<h2 style = "text-decoration: underline;"> Money Bank:</h2>
+    	<h3 id = "cornerp1name"> </h3>
+    	<h4 id = "displayplayermoney1"> </h4>
+    	<h4 id = "cornerp2name"> </h3>
+    	<h4 id = "displayplayermoney2"> </h4>
+    	
+    </div>
+    <br>
+    <div id = "wheelgamebuttons">
+    	<button class = "wheel_buttons" id="spin">Stop!</button>
+    	<button class = "wheel_buttons"onclick="back()"> Back to game </button>
+    </div>
+</div>
+
+<div id="winnerscreen">
+    <video playsinline autoplay muted loop poster="Images/rags to riches.png" id="bgvid">
+       <source src="3DS Max Fireworks.mp4" type="video/mp4">
+    </video>
+
+
+    <div id = "win">
+        <p id="winner_name"> Hannah </p>
+        <p id= "wins"> Wins! </p> 
+        <button class= "play_button" onclick = "window.location.href='main game.html'">Play Again?</button>
+    </div>
+</div>
+ 
+ <!-- This is the instructions screen -->
+ <div id= "instructions_mainscreen">
+  <h1> Instructions </h1>
+  <h3> Click the specific heading of the part of the game you want to find out more about </h3> 
+  <p class = "textshow" onclick="featuresgame()"> Game features </p>
+  <p class = "textshow" onclick= "buyingapropertyinstructions()"> Buying a Property </p>
+  <p class = "textshow" onclick= "payingrentinstructions()"> Pay Rent </p>
+  <p class = "textshow" onclick= "freespaceinstructions()"> Free space </p>
+  <p class = "textshow" onclick= "landingongoinstructions()"> Landing On Go </p>
+  <p class = "textshow" onclick= "landingonjailinstructions()"> Landing On Jail </p>
+  <p class = "textshow" onclick= "landingongotojailinstructions()"> Landing On Go To Jail</p>
+  <p class = "textshow" onclick= "chancecardinstructions()"> Chance Cards </p>
+  <p class = "textshow" onclick= "gameofluckinstructions()"> Game Of Luck </p>
+  <input class = "instructionsscreenbutton" type = "button" value="Go back" onclick="backtothemainmenu()"/>
+</div>
+
+<div id = "gamefeatures">
+
+  <p id = 'gf1' onclick="changeimage1()">CLICK TO CONTINUE...</p>
+  <img id = 'gfii' src = 'Instructions/Gameboardfeatures- 1.jpg' onclick='changeimage1()'/>
+</div>
+
+<div id = "buyingapropins">
+  <p id = 'bp1' onclick="changeimage2()">CLICK TO CONTINUE...</p>
+  <img id = 'bpii' src = 'Instructions/Propertyinstructions- 1.jpg' onclick='changeimage2()'/>
+</div>
+
+<div id = "payingrentinstruct">
+  <p id = 'rp1' onclick="changeimage3()">CLICK TO CONTINUE...</p>
+  <img id = 'rpii' src = 'Instructions/Rentinstructions 1.jpg' onclick='changeimage3()'/>
+</div>
+
+<div id = "freespaceinstruct">
+  <p id = 'fs1' onclick="changeimage4()">CLICK TO CONTINUE...</p>
+  <img id = 'fsii' src = 'Instructions/Freespaces 1.jpg' onclick='changeimage4()'/>
+</div>
+
+<div id = "landingongoinstruct">
+  <p id = 'lg1' onclick="changeimage5()">CLICK TO CONTINUE...</p>
+  <img id = 'lgii' src = 'Instructions/Goinstructions- 1.jpg' onclick='changeimage5()'/>
+</div>
+
+
+<div id = "landingonjailinstruct">
+  <p id = 'lj1' onclick="changeimage6()">CLICK TO CONTINUE...</p>
+  <img id = 'ljii' src = 'Instructions/jailinstructions- 1 .jpg' onclick='changeimage6()'/>
+</div>
+
+<div id = "landingongotojailinstruct">
+  <p id = 'lgj1' onclick="changeimage7()">CLICK TO CONTINUE...</p>
+  <img id = 'lgjii' src = 'Instructions/gotojailinstructions -1.jpg' onclick='changeimage7()'/>
+</div>
+
+
+<div id = "chancecardsinstruct">
+  <p id = 'cc1' onclick="changeimage8()">CLICK TO CONTINUE...</p>
+  <img id = 'ccii' src = 'Instructions/chanceinstruction- 1.jpg' onclick='changeimage8()'/>
+</div>
+
+<div id = "gameofluckinstruct">
+  <p id = 'gl1' onclick="changeimage9()">CLICK TO CONTINUE...</p>
+  <img id = 'glii' src = 'Instructions/luckinstructions- 1.jpg' onclick='changeimage9()'/>
+</div>
+
+
+
+</body>
+<script type="text/javascript" src="code.js">
+</script>
+</html>
