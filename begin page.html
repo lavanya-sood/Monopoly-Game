@@ -1,0 +1,120 @@
+<html>
+
+<head>
+	<title> Monopoly </title>
+	<style>
+	body {
+		background-image: url("Images/Blue-Marble-Paper-Texture.jpg");
+	}
+	#howtoplay {
+		background-image: url(Scroll.jpg);
+		background-size: cover;
+		display: none;
+		width: 100%;
+		height: 100%;
+
+	}
+	#heading {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+
+
+		#soundyes{
+			float: right;
+			width:30px;
+			height:30px;
+		}
+		#soundno{
+			float: right;
+			width:30px;
+			height:30px;
+		}
+		.start_button,.instructions_button {
+		  display: inline-block;
+		  padding: 15px 25px;
+		  font-size: 24px;
+		  cursor: pointer;
+		  text-align: center;
+		  text-decoration: none;
+		  outline: none;
+		  color: #fff;
+		  border: none;
+		  border-radius: 15px;
+		  box-shadow: 0 9px #999;
+		}
+		.start_button:hover {background-color: #DAA520}
+
+		.start_button:active {
+		  background-color: #DAA520;
+		  box-shadow: 0 5px #666;
+		  transform: translateY(4px);
+		}
+		.instructions_button:hover {background-color: #8B0000}
+
+		.instructions_button:active {
+		  background-color: #8B0000;
+		  box-shadow: 0 5px #666;
+		  transform: translateY(4px);
+		}
+		#homebutton {
+			margin-top: 2%;
+			margin-left: 40%;
+
+		}
+		.start_button {
+			 background-color: #FFD700;
+		}
+		.instructions_button{
+			background-color: #FF5733;
+		}
+	</style>
+</head>
+<body>
+		<div id="playmusicnow">
+		<button type="submit" onclick = "playmusic()"> <img src="Images/Buttons/sound.png" id="soundyes" alt="Submit"> </button>
+	<button type="submit" onclick = "stopmusic()"> <img src="Images/Buttons/nosound.png" id="soundno" alt="Submit"> </button>
+	</div>
+		<div id = "home_page">
+			<img id = "heading" src = "Images/Title .png"	alt="heading" width = "900" height = "500">
+			<div id = "homebutton">
+			<button class= "start_button" onclick = "window.location.href='main game.html'">Start</button>
+
+			<input class= "instructions_button" type = "button" value="Instructions" onclick="instructions()"/>
+			</div>
+		</div>
+		
+		</div>
+</body>
+<script>
+var startmusic = false;
+//the music file
+var music = new Audio('Audio/bensound-jazzyfrenchy.mp3');
+
+//this function starts the music 
+function playmusic(){
+	startmusic = true;
+	if (startmusic == true){
+		
+		  music.addEventListener('ended', function() {
+		    this.currentTime = 0;
+		    this.play();
+		}, false);
+		  music.play();
+	} 
+}
+
+//this function stops the music
+function stopmusic(){
+	startmusic = false;
+	music.pause();
+	music.currenttime = 0;
+}
+
+function instructions() {
+	//this functions opens the instructions html page
+	window.location.href='Instructions.html'
+}
+
+</script>
+</html>
