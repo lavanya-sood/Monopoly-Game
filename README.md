@@ -3,4 +3,4 @@ This was created as part of my High School Software Design and Development major
 
 ### Instructions to run:
   1. Download the repository
-  2. Open **_begin.html_** to run the file
+  2. Open **_begin page.html_** to run the file
